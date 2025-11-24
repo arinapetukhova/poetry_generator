@@ -6,7 +6,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install dependencies
-RUN pip install --no-cache-dir --prefer-binary -r requirements.txt
+RUN pip install -r requirements.txt
 
 # Then copy the rest of the application
 COPY . .
