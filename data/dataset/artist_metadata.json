@@ -1,0 +1,656 @@
+{
+  "Taylor Swift": {
+    "name": "Taylor Swift",
+    "genres": ["pop"],
+    "description": "Taylor Swift is a prolific singer-songwriter known for her narrative songwriting style. Her music often explores themes of love, heartbreak, friendship, coming-of-age, and the complexities of public life and relationships. She frequently uses personal experiences as a basis for her lyrics, offering an intimate and relatable perspective. While primarily rooted in pop, her musical style has evolved throughout her career, incorporating elements from country music in her early work and experimenting with synth-pop and folk-pop influences in later albums, always maintaining a strong melodic sensibility and lyrical focus."
+  },
+  "Ed Sheeran": {
+    "name": "Ed Sheeran",
+    "genres": ["pop", "soul"],
+    "description": "Ed Sheeran is a singer-songwriter known for his heartfelt lyrics and acoustic-driven pop sound. He often explores themes of love, relationships, everyday life experiences, and personal growth in his music. His style is characterized by a blend of melodic acoustic guitar, looping techniques, and soulful vocals, creating an intimate and relatable musical experience."
+  },
+  "Adele": {
+    "name": "Adele",
+    "genres": ["pop", "soul"],
+    "description": "Adele is a British singer-songwriter known for her powerful mezzo-soprano vocals and emotionally charged ballads. Her music primarily explores themes of heartbreak, love, loss, and the complexities of relationships, often drawing from personal experiences. Stylistically, she blends contemporary pop with classic soul influences, utilizing lush instrumentation, dramatic vocal arrangements, and often piano-driven melodies to create a sound that is both grand and intimate."
+  },
+  "Billie Eilish": {
+    "name": "Billie Eilish",
+    "genres": ["pop", "alternative"],
+    "description": "Billie Eilish explores themes of mental health, body image, love, heartbreak, and the pressures of fame in her music. Her style often features a distinctive blend of whispered vocals, dark and minimalist electronic production, and atmospheric soundscapes, frequently incorporating ASMR elements and distorted synths."
+  },
+  "Ariana Grande": {
+    "name": "Ariana Grande",
+    "genres": ["pop", "soul"],
+    "description": "Ariana Grande is a prominent pop and soul artist known for her impressive vocal range and whistle tones. Her music often explores themes of love, heartbreak, empowerment, and self-acceptance, reflecting personal experiences and universal emotions. Stylistically, she blends contemporary pop with R&B influences, utilizing lush harmonies, intricate vocal arrangements, and often upbeat, danceable rhythms, though she also delivers powerful ballads."
+  },
+  "Harry Styles": {
+    "name": "Harry Styles",
+    "genres": ["pop", "rock", "alternative", "soul"],
+    "description": "Harry Styles is a British singer-songwriter known for his genre-bending pop music, often incorporating elements of rock, alternative, and soul. His music frequently explores themes of love, relationships, self-discovery, identity, and mental health, often with a introspective and vulnerable tone. Stylistically, he blends upbeat, catchy pop hooks with more raw, soulful vocals and instrumentation, sometimes incorporating classic rock influences, indie-pop sensibilities, and a touch of disco or funk. He is recognized for his charismatic stage presence and evolving musical adventurousness, moving beyond traditional pop structures."
+  },
+  "Olivia Rodrigo": {
+    "name": "Olivia Rodrigo",
+    "genres": ["pop", "rock", "alternative"],
+    "description": "Olivia Rodrigo is a singer-songwriter known for her candid and emotionally resonant music. Her lyrics often delve into themes of heartbreak, coming-of-age anxieties, self-doubt, and the complexities of young love and identity. Musically, she blends pop sensibilities with a raw, often angsty rock and alternative edge, incorporating power ballads, grunge-lite guitars, and a vocal delivery that ranges from vulnerable and melodic to powerfully anthemic."
+  },
+  "Katy Perry": {
+    "name": "Katy Perry",
+    "genres": ["pop"],
+    "description": "Katy Perry is a global pop icon known for her vibrant and often anthemic music. Her songs frequently explore themes of empowerment, self-belief, love, heartbreak, and escapism, often with a playful and whimsical touch. Stylistically, she incorporates catchy melodies, strong vocal hooks, and polished production, often leaning into maximalist pop arrangements. Her music is characterized by its broad appeal and ability to blend relatable narratives with an upbeat, theatrical presentation."
+  },
+  "Lady Gaga": {
+    "name": "Lady Gaga",
+    "genres": ["pop"],
+    "description": "Lady Gaga is a boundary-pushing pop artist known for her theatricality, strong vocals, and ever-changing aesthetic. Her music often explores themes of self-love, acceptance, identity, mental health struggles, fame, and empowerment. She fearlessly experiments with diverse styles, frequently blending high fashion, art, and performance into her visual presentations and music videos. While primarily rooted in pop, her work often incorporates elements of dance-pop, electropop, and glam rock, characterized by anthemic melodies and bold production."
+  },
+  "Rihanna": {
+    "name": "Rihanna",
+    "genres": ["pop", "soul"],
+    "description": "Rihanna is a Barbadian singer, songwriter, actress, and businesswoman. Her music often explores themes of love, relationships, empowerment, and resilience, frequently featuring introspective lyrics alongside confident and assertive messaging.  She is known for her versatile vocal delivery and a stylistic evolution that blends elements of dancehall, R&B, and pop, often incorporating electronic production and edgy instrumentation. While primarily recognized for her pop sound, early in her career and throughout, she has infused a soulful sensibility into her vocal performances and musical arrangements."
+  },
+  "Hozier": {
+    "name": "Hozier",
+    "genres": ["alternative", "soul", "rock", "pop"],
+    "description": "Hozier is an Irish singer-songwriter known for his rich baritone voice and often poetic, literary lyrics. His music frequently delves into themes of love (both romantic and divine), religion, power dynamics, social justice, and the complexities of human nature, often with a critical eye towards institutions and societal norms. Stylistically, he blends soulful vocals with elements of blues, folk, and rock, creating a sound that is both raw and sophisticated. His arrangements often feature lush instrumentation, gospel choirs, and powerful dynamics, making his music resonate across multiple genres."
+  },
+ "Sia": {
+    "name": "Sia",
+    "genres": [
+      "pop",
+      "soul"
+    ],
+    "description": "Sia Furler is an Australian singer-songwriter known for her powerful vocals and distinctive visual artistry. Her music often explores themes of vulnerability, self-acceptance, mental health struggles (such as depression and anxiety), addiction, and resilience. Stylistically, she frequently employs dramatic vocal delivery, dynamic song structures that often build to powerful choruses, and incorporates elements of synth-pop and electronic production. She is particularly recognized for her emotional depth and ability to craft anthemic, yet often melancholic, pop songs."
+  },
+  "Sam Smith": {
+    "name": "Sam Smith",
+    "genres": [
+      "pop",
+      "soul"
+    ],
+    "description": "Sam Smith is a British singer-songwriter known for their soulful voice and emotionally resonant ballads. Their music often explores themes of love, heartbreak, longing, and self-acceptance, drawing from personal experiences and a relatable vulnerability. Stylistically, Smith's music frequently features lush orchestrations, gospel-infused backing vocals, and a classic pop sensibility, often building to powerful, dramatic crescendos. They are particularly recognized for their ability to deliver powerful vocal performances that convey deep emotion."
+  },
+  "Chappell Roan": {
+    "name": "Chappell Roan",
+    "genres": [
+      "pop"
+    ],
+    "description": "Chappell Roan is a pop artist known for her vibrant, theatrical, and often campy aesthetic. Her music frequently explores themes of queer identity, self-discovery, female empowerment, and the complexities of young love and desire, often with a playful and humorous tone. Stylistically, she blends catchy pop melodies with a touch of 80s synth-pop and a strong visual component that emphasizes glitter, drag-inspired makeup, and over-the-top costumes."
+  },
+  "Halsey": {
+    "name": "Halsey",
+    "genres": [
+      "pop",
+      "alternative",
+      "rock"
+    ],
+    "description": "Halsey is an American singer, songwriter, and actress known for their distinctive voice and genre-bending music. Their music often explores complex themes such as mental health (bipolar disorder, anxiety), sexuality (being openly bisexual), abusive relationships, societal pressures, and the darker sides of romance and fame. They are celebrated for their raw and honest lyricism, often crafting narratives that delve into vulnerability and self-discovery. Stylistically, Halsey incorporates elements of pop, alternative, and rock, frequently blending synth-pop with guitar-driven sounds and often experimenting with dark, atmospheric production. Their vocal delivery can range from ethereal and melodic to powerful and gritty, adapting to the emotional depth of their songs."
+  },
+  "Billy Joel": {
+    "name": "Billy Joel",
+    "genres": [
+      "pop",
+      "rock",
+      "soul"
+    ],
+    "description": "Billy Joel is an iconic American singer-songwriter known for his distinctive blend of pop, rock, and soul. His music often explores themes of working-class life, relationships, nostalgia, social commentary, and personal struggles and triumphs, painting vivid lyrical pictures of everyday experiences. Musically, he masterfully incorporates elements of classical piano, blues, jazz, and show tunes into a mainstream rock and pop framework, often characterized by strong melodies, intricate piano arrangements, and engaging storytelling."
+  },
+  "Maroon 5": {
+    "name": "Maroon 5",
+    "genres": [
+      "pop",
+      "rock",
+      "soul",
+      "alternative"
+    ],
+    "description": "Maroon 5 is an American pop rock band known for their catchy melodies and Adam Levine's distinctive falsetto vocals. Their music often explores themes of love, relationships, heartbreak, and desire, frequently with a touch of playful flirtation or melancholic reflection. They primarily blend pop sensibilities with rock instrumentation, often incorporating elements of funk and R&B, particularly evident in their soulful vocal arrangements and groove-oriented rhythms. Over time, their sound has evolved, leaning more heavily into mainstream pop while retaining their rock and soul influences."
+  },
+  "Britney Spears": {
+    "name": "Britney Spears",
+    "genres": [
+      "pop"
+    ],
+    "description": "Britney Spears is a global pop icon known for her catchy, dance-pop anthems and provocative image. Her music often explores themes of love, relationships, empowerment, and self-expression, frequently with an underlying tone of innocence or vulnerability contrasted with a burgeoning sexuality. Stylistically, she utilizes heavy synth-driven instrumentation, layered vocals, and prominent dance beats, often incorporating elements of R&B, electronic music, and, in some periods, hip-hop inflections within her pop framework."
+  },
+  "Michael Jackson": {
+    "name": "Michael Jackson",
+    "genres": [
+      "pop",
+      "soul",
+      "rock"
+    ],
+    "description": "Michael Jackson, the 'King of Pop,' explored themes of social justice, love, unity, and self-reflection in his music. He blended elements of funk, R&B, disco, and rock into his distinctive pop sound. Known for his innovative music videos, dynamic stage presence, and iconic dance moves, his music often featured complex vocal arrangements and intricate instrumentation."
+  },
+  "Madonna": {
+    "name": "Madonna",
+    "genres": [
+      "pop"
+    ],
+    "description": "Madonna is a pop icon renowned for her constant reinvention and provocative approach. Her music frequently explores themes of sexuality, religion, freedom, and female empowerment, often challenging societal norms and pushing boundaries. Stylistically, she's known for her chameleon-like ability to adapt and incorporate elements from various subcultures and fashion trends into her artistry, creating an ever-evolving visual and sonic identity."
+  },
+  "Prince": {
+    "name": "Prince",
+    "genres": [
+      "pop",
+      "rock",
+      "soul"
+    ],
+    "description": "Prince Rogers Nelson was a revolutionary musician known for his flamboyant showmanship and an unparalleled artistic output that blurred the lines of genre. His music often explored themes of sexuality, spirituality, love, social commentary, and the complexities of human relationships, delivered with a daring and often provocative edge. Stylistically, Prince was a master of synthesis, seamlessly blending funk grooves, rock guitar riffs, soulful vocals, and pop melodies, often incorporating electronic elements and innovative production techniques. He was a multi-instrumentalist whose music was characterized by his distinctive falsetto and multi-tracked harmonies, intricate arrangements, and a vibrant, often theatrical, presentation."
+  },
+  "Whitney Houston": {
+    "name": "Whitney Houston",
+    "genres": [
+      "pop",
+      "soul"
+    ],
+    "description": "Whitney Houston was an iconic American singer whose music often explored themes of love, relationships, empowerment, and resilience. Her powerful and technically proficient vocal style, characterized by a soaring range and soulful delivery, became her signature. She was primarily known for her work in pop and soul, skillfully blending these genres to create timeless ballads and upbeat anthems."
+  },
+ "George Michael": {
+    "name": "George Michael",
+    "genres": [
+      "pop",
+      "soul"
+    ],
+    "description": "George Michael was a British singer-songwriter known for his smooth vocals and pop/soul sensibilities. His music often explored themes of love, desire, heartbreak, and social commentary. He frequently delved into personal vulnerability and the complexities of relationships, often with an underlying message of hope or self-acceptance. His style was characterized by strong melodies, sophisticated arrangements, and a blend of upbeat dance-pop tracks and soulful, emotional ballads."
+  },
+  "Cher": {
+    "name": "Cher",
+    "genres": [
+      "pop",
+      "rock",
+      "soul"
+    ],
+    "description": "Cher is a multifaceted artist known for her distinct contralto voice and dramatic stage presence. Her music often explores themes of independence, empowerment, overcoming heartbreak, and self-acceptance. She has a remarkable ability to reinvent her sound and image, incorporating elements of pop, rock, and soul throughout her career. Her styles range from the folk-rock of her early career to disco, dance-pop, and power ballads, always delivered with her signature vocal expressiveness."
+  },
+  "Elton John": {
+    "name": "Elton John",
+    "genres": [
+      "pop",
+      "rock",
+      "soul"
+    ],
+    "description": "Elton John is a prolific British singer-songwriter known for his flamboyant stage persona and powerful vocals. His music often explores themes of love, loss, longing, and the challenges of human relationships, sometimes with a touch of theatrical storytelling. Musically, he blends heartfelt ballads with energetic rock and roll, incorporating elements of gospel and soul into his piano-driven arrangements."
+  },
+  "Kendrick Lamar": {
+    "name": "Kendrick Lamar",
+    "genres": [
+      "rap",
+      "soul"
+    ],
+    "description": "Kendrick Lamar is a highly acclaimed rapper known for his thought-provoking lyrics and innovative musical style. His music often explores themes of racial injustice, poverty, mental health, and the complexities of life in America, particularly from the perspective of the Black community. He masterfully blends storytelling, social commentary, and personal introspection, delivering narratives that are both raw and profound. Musically, Lamar incorporates elements of jazz, funk, soul, and spoken word into his rap foundation, creating diverse and often experimental soundscapes. He is celebrated for his intricate rhyme schemes, dynamic vocal delivery, and willingness to push the boundaries of the hip-hop genre."
+  },
+  "Drake": {
+    "name": "Drake",
+    "genres": [
+      "rap",
+      "pop",
+      "soul"
+    ],
+    "description": "Drake is a highly influential and commercially successful Canadian artist known for his introspective lyrics and versatile musical approach. He often explores themes of fame, relationships, ambition, trust issues, and his experiences growing up and in the music industry. His music blends melodic singing with traditional rapping, often incorporating elements of R&B, pop, and dancehall into his predominantly hip-hop sound. He's known for his conversational flow, use of autotune, and ability to craft both club anthems and more introspective, moody tracks."
+  },
+  "Kanye West": {
+    "name": "Kanye West",
+    "genres": [
+      "rap",
+      "soul",
+      "pop"
+    ],
+    "description": "Kanye West is a highly influential and often controversial artist known for his genre-bending approach to music production and candid lyricism. In his music, he explores a wide range of topics including consumerism, religion, societal critique, his personal struggles with fame and mental health, love, and self-aggrandizement. His styles are characterized by innovative sampling, a blend of opulent and gritty production, Auto-Tune experimentation, and a constant evolution of his sonic palette. He is primarily known for rap, often incorporating elements of soul and pop into his work."
+  },
+  "Travis Scott": {
+    "name": "Travis Scott",
+    "genres": [
+      "rap"
+    ],
+    "description": "Travis Scott is a Houston-born rapper, singer, and record producer known for his unique blend of trap music with psychedelic and atmospheric elements. His music often explores themes of fame, excess, drug use, relationships, and the struggles and triumphs of his personal journey. Stylistically, he incorporates heavy auto-tune, ad-libs, and a distinctive, often dark and hazy soundscape characterized by distorted synths, booming 808s, and ethereal melodies. His live shows are also renowned for their high energy and elaborate stage production."
+  },
+  "Cardi B": {
+    "name": "Cardi B",
+    "genres": [
+      "rap"
+    ],
+    "description": "Cardi B is a Bronx-born rapper known for her distinctive style, characterized by a raw, often explicit lyrical approach combined with an energetic delivery. Her music frequently explores themes of female empowerment, sexuality, wealth, ambition, and her journey from humble beginnings to international stardom. She often uses vivid, conversational language and humor to convey her messages, showcasing her confidence and unvarnished perspective. While primarily rooted in rap, her songs often incorporate pop sensibilities in their production and catchy hooks."
+  },
+  "Nicki Minaj": {
+    "name": "Nicki Minaj",
+    "genres": [
+      "pop",
+      "rap"
+    ],
+    "description": "Nicki Minaj is a Trinidadian-American rapper, singer, songwriter, and actress. Her music often explores themes of female empowerment, sexuality, confidence, and navigating the music industry. She is known for her versatile vocal delivery, which includes fast-paced rapping, singing, and the use of various alter egos and accents. Her musical style incorporates elements of pop, R&B, and dance, often featuring catchy hooks and a blend of aggressive and melodic flows."
+  },
+  "Tyler, The Creator": {
+    "name": "Tyler, The Creator",
+    "genres": [
+      "rap",
+      "soul",
+      "alternative"
+    ],
+    "description": "Tyler, The Creator is a Grammy-winning artist known for his distinctive blend of rap, soul, and alternative music. His music often explores themes of identity, loneliness, love, consumerism, and childhood nostalgia, frequently delivered with a sense of playful rebellion and introspection. He is recognized for his genre-bending approach, incorporating lush instrumentation, complex arrangements, and a wide range of vocal styles from aggressive rapping to melodic singing. His unique production often features unconventional samples, distorted synths, and intricate beats, creating a sound that is both experimental and emotionally resonant."
+  },
+  "Eminem": {
+    "name": "Eminem",
+    "genres": [
+      "rap"
+    ],
+    "description": "Eminem, born Marshall Mathers III, is a highly influential and controversial rapper known for his intricate rhyme schemes, storytelling, and confessional lyrics. His music frequently explores themes of his troubled childhood, poverty, drug addiction, mental health struggles, celebrity culture, and socio-political commentary. He is known for his aggressive and often dark lyrical style, incorporating elements of satire, dark humor, and self-deprecating wit. Eminem has also been praised for his technical skill, including multi-syllabic rhymes, complex internal rhyme schemes, and diverse vocal delivery, often employing different character voices within his songs."
+  },
+ "The Beatles": {
+    "name": "The Beatles",
+    "genres": [
+      "pop",
+      "rock"
+    ],
+    "description": "The Beatles were an English rock band formed in Liverpool in 1960. They are widely regarded as the most influential band of all time, and were integral to the development of counterculture and popular music's recognition as an art form. Their music explored a wide range of topics, including love, relationships, social commentary, introspection, and surrealism. Their styles evolved significantly throughout their career, initially rooted in skiffle and 1950s rock and roll, progressing to incorporate elements of folk, psychedelia, hard rock, classical, and Indian music. They are primarily known for pioneering pop and rock music."
+  },
+  "Queen": {
+    "name": "Queen",
+    "genres": [
+      "pop",
+      "rock"
+    ],
+    "description": "Queen was a British rock band formed in London in 1970, known for their powerful vocals, elaborate stage shows, and eclectic musical style. Their music often explores themes of love, rebellion, fantasy, and human experience, delivered with a theatrical flair and a sense of grandeur. They masterfully blended hard rock riffs with pop melodies, opera, and glam rock aesthetics, creating a distinctive and highly influential sound. While primarily known for rock, their music frequently incorporated pop sensibilities and accessibility, making them cross-genre superstars."
+  },
+  "Led Zeppelin": {
+    "name": "Led Zeppelin",
+    "genres": [
+      "rock"
+    ],
+    "description": "Led Zeppelin, a pioneering rock band, is celebrated for their heavy, guitar-driven sound. Their music explores themes of mythology, mysticism, love, loss, and social commentary, often with a raw and powerful intensity. They masterfully blended various styles including blues, folk, and psychedelia, creating a unique and enduring sound that pushed the boundaries of rock music."
+  },
+  "Pink Floyd": {
+    "name": "Pink Floyd",
+    "genres": [
+      "rock"
+    ],
+    "description": "Pink Floyd is a highly influential British rock band known for their progressive and psychedelic soundscapes. Their music often explores themes of alienation, mental illness, war, societal critique, and the passage of time, frequently presented through concept albums with intricate narratives. Musically, they blend elements of blues rock, hard rock, and space rock, characterized by long instrumental passages, experimental sound effects, philosophical lyrics, and dynamic shifts in tempo and mood."
+  },
+  "The Rolling Stones": {
+    "name": "The Rolling Stones",
+    "genres": [
+      "rock",
+      "pop",
+      "soul"
+    ],
+    "description": "The Rolling Stones are an iconic English rock band known for their raw, bluesy sound and rebellious image. Their music often explores themes of love, lust, power, social commentary, and the darker side of life, presented with a swaggering confidence. While primarily rooted in rock, they masterfully incorporate elements of rhythm and blues, blues rock, and even touches of pop and soul, creating a distinctive and enduring style characterized by strong guitar riffs, harmonica, and Mick Jagger's charismatic vocals."
+  },
+  "Nirvana": {
+    "name": "Nirvana",
+    "genres": [
+      "rock",
+      "alternative"
+    ],
+    "description": "Nirvana was a highly influential American rock band known for their raw, angst-ridden sound and introspective lyrics. They often explored themes of alienation, social commentary, mental health, and anti-establishment sentiments. Their music blended punk rock's intensity with melodic sensibilities, characterized by dynamic shifts between quiet verses and loud, distorted choruses. They spearheaded the grunge movement and became a defining band of the 1990s alternative rock scene."
+  },
+  "Radiohead": {
+    "name": "Radiohead",
+    "genres": [
+      "rock",
+      "alternative"
+    ],
+    "description": "Radiohead is an English rock band known for their innovative and evolving sound. They frequently explore themes of alienation, consumerism, political anxieties, and the dehumanizing aspects of modern technology. Musically, they fuse atmospheric soundscapes, electronic experimentation, and intricate guitar work, ranging from introspective ballads to avant-garde rock anthems. Their styles incorporate elements of art rock, electronic music, and experimental rock, often characterized by Thom Yorke's distinctive falsetto and abstract lyrics."
+  },
+  "Coldplay": {
+    "name": "Coldplay",
+    "genres": [
+      "pop",
+      "rock",
+      "alternative"
+    ],
+    "description": "Coldplay is a British rock band known for their anthemic soundscapes and emotional lyrics. They frequently explore themes of hope, love, peace, social justice, and existentialism, often with a sense of melancholic optimism. Their musical style is characterized by soaring melodies, intricate guitar work (often with chiming arpeggios), piano-driven compositions, and atmospheric synthesizers. They seamlessly blend stadium-rock grandeur with pop sensibilities and alternative experimentation, creating a distinctive sound that is both intimate and expansive."
+  },
+  "The Killers": {
+    "name": "The Killers",
+    "genres": [
+      "rock",
+      "alternative",
+      "pop"
+    ],
+    "description": "The Killers are an American rock band known for their anthemic sound and powerful vocals. Their music frequently explores themes of nostalgia, small-town life, ambition, love, loss, and the pursuit of dreams, often with a touch of Americana. Stylistically, they incorporate soaring synth melodies, driving guitar riffs, and strong, memorable choruses, drawing influence from new wave, post-punk, and heartland rock, creating a stadium-ready sound that blends raw energy with polished pop sensibility."
+  },
+  "Imagine Dragons": {
+    "name": "Imagine Dragons",
+    "genres": [
+      "pop",
+      "rock",
+      "alternative"
+    ],
+    "description": "Imagine Dragons is an American pop rock band known for their anthemic sound and introspective lyrics. They often explore themes of mental health, self-doubt, overcoming adversity, existentialism, and social commentary. Their music typically features powerful vocals, driving rhythms, and a blend of electronic elements with traditional rock instrumentation, often building to large, stadium-filling choruses. They are recognized for their energetic and emotionally charged delivery."
+  },
+  "Linkin Park": {
+    "name": "Linkin Park",
+    "genres": [
+      "rock",
+      "alternative",
+      "rap"
+    ],
+    "description": "Linkin Park was an American rock band known for their innovative blend of alternative rock, hard rock, and hip hop. Their music often explored themes of mental health, addiction, inner turmoil, and societal pressures, reflecting a raw and cathartic emotional landscape. They effectively combined heavy guitar riffs and electronic elements with melodic singing and rap vocals, creating a distinctive and impactful sound that resonated with a wide audience."
+  },
+  "Green Day": {
+    "name": "Green Day",
+    "genres": [
+      "rock",
+      "alternative"
+    ],
+    "description": "Green Day is an American rock band known for their high-energy, melodic punk rock sound. Their music often explores themes of alienation, social commentary, political dissatisfaction, and personal struggles like anxiety and coming-of-age. They typically employ a fast-paced, guitar-driven style with catchy hooks and a rebellious spirit, often characterized by energetic drums and distinctive vocal delivery. While rooted in punk, their sound incorporates elements of pop-punk and alternative rock, evolving to embrace more theatrical and concept album structures in their later work."
+  },
+  "My Chemical Romance": {
+    "name": "My Chemical Romance",
+    "genres": [
+      "rock",
+      "alternative"
+    ],
+    "description": "My Chemical Romance is an American rock band known for their theatrical and emotional music. Their lyrics often explore themes of death, despair, love, and redemption, frequently through narrative concepts and character-driven songs. Musically, they blend elements of punk rock, hard rock, and pop-punk with a strong sense of storytelling and dramatic flair, utilizing driving guitars, powerful drums, and dynamic vocal performances."
+  },
+  "Fall Out Boy": {
+    "name": "Fall Out Boy",
+    "genres": [
+      "rock",
+      "alternative",
+      "pop"
+    ],
+    "description": "Fall Out Boy is an American rock band known for their blend of alternative rock with pop sensibilities, often incorporating elements of emo and pop-punk. Their music frequently explores themes of anxiety, self-doubt, love, disillusionment, and societal commentary, often expressed through intricate and often verbose lyrics. They utilize powerful guitar riffs, driving rhythms, and anthemic choruses, evolving their sound from their early pop-punk roots to a more polished, arena-rock sound with strong pop influences, particularly in their later work."
+  },
+  "Paramore": {
+    "name": "Paramore",
+    "genres": [
+      "rock",
+      "alternative",
+      "pop"
+    ],
+    "description": "Paramore is an American rock band known for their dynamic sound and Hayley Williams' powerful vocals. Their music frequently explores themes of personal growth, self-discovery, relationships, emotional vulnerability, and societal pressures, often with an underlying message of resilience. Stylistically, they incorporate elements of pop-punk, emo, and indie rock, characterized by energetic guitar riffs, driving rhythms, and melodic hooks, while also experimenting with synth-pop and new wave sounds in their later work."
+  },
+  "The Smiths": {
+    "name": "The Smiths",
+    "genres": [
+      "alternative",
+      "rock",
+      "pop"
+    ],
+    "description": "The Smiths were an influential English rock band known for their unique blend of jangling guitars, Morrissey's distinctive baritone, and witty, often melancholic lyrics. Their music frequently explored themes of alienation, unrequited love, the drabness of British life, and social awkwardness. Musically, they incorporated elements of 60s pop and rock, with a focus on Johnny Marr's intricate guitar melodies, creating a sound that was both melancholic and uplifting. They are primarily recognized as pioneers of alternative rock, bridging the gap between post-punk and indie pop."
+  },
+  "The Cure": {
+    "name": "The Cure",
+    "genres": [
+      "rock",
+      "alternative",
+      "pop"
+    ],
+    "description": "The Cure is a British rock band formed in 1978, known for their melancholic and often introspective sound. Their music explores themes of love, loss, existential dread, dreams, and the darker aspects of human emotion. They have experimented with various styles throughout their career, ranging from the sparse, atmospheric sounds of early post-punk to the more ornate, romantic sonic landscapes of their later work. Their sound is characterized by Robert Smith's distinctive vocals, jangling guitars, prominent basslines, and often synthesizers, creating a rich and often gloomy, yet beautiful, sonic tapestry. While primarily rooted in rock and alternative, their melodic sensibilities and accessibility have also garnered them pop success."
+  },
+  "Depeche Mode": {
+    "name": "Depeche Mode",
+    "genres": [
+      "pop",
+      "alternative",
+      "rock"
+    ],
+    "description": "Depeche Mode is an iconic English electronic music band known for their dark, atmospheric, and often melancholic soundscapes. They explore themes of faith, redemption, sin, desire, alienation, and the human condition, often with a cynical or introspective edge. Their music frequently features synthesizers, dramatic vocals, and a strong rhythmic backbone, evolving from synth-pop and new wave into a more alternative and electronic rock sound, characterized by rich textures and powerful melodies."
+  },
+  "Joy Division": {
+    "name": "Joy Division",
+    "genres": [
+      "rock",
+      "alternative"
+    ],
+    "description": "Joy Division was a pioneering post-punk band known for their dark, introspective, and atmospheric sound. Their music often explored themes of alienation, despair, anxiety, and the human condition, with lyrics reflecting the struggles and internal turmoil of frontman Ian Curtis. Musically, they blended traditional rock instrumentation with a strong emphasis on rhythm and a distinctive, often melancholic, guitar sound. Their style was characterized by stark, minimalist arrangements, driving basslines, and Curtis's deep, baritone vocals, contributing to a sense of impending doom and emotional intensity. They are widely regarded as a highly influential band in the development of alternative rock and gothic rock."
+  },
+  "New Order": {
+    "name": "New Order",
+    "genres": [
+      "alternative",
+      "pop",
+      "rock"
+    ],
+    "description": "New Order emerged from the ashes of Joy Division, pioneering a unique blend of post-punk sensibilities with electronic music. Their lyrics often explore themes of relationships, longing, and existential angst, frequently presented with a sense of melancholic ambiguity. Musically, they fuse the guitar-driven dynamics of rock with synthesizers and drum machines, creating atmospheric soundscapes that are both danceable and introspective. They are particularly known for their innovative use of electronics and their ability to bridge the gap between alternative rock and mainstream pop, influencing countless artists across various genres."
+  },
+  "David Bowie": {
+    "name": "David Bowie",
+    "genres": [
+      "pop",
+      "rock",
+      "alternative",
+      "soul"
+    ],
+    "description": "David Bowie was a highly influential and chameleonic artist, constantly reinventing his musical style and visual persona throughout his career. His music explored themes of identity, alienation, fame, futility, and the future, often through the lens of science fiction and theatrical narratives. Bowie masterfully blended a diverse range of styles, from glam rock and art rock to soul, funk, electronic, and experimental sounds. He was known for his distinctive baritone voice, elaborate stage productions, and groundbreaking music videos."
+  },
+  "Bruce Springsteen": {
+    "name": "Bruce Springsteen",
+    "genres": [
+      "rock",
+      "pop",
+      "soul"
+    ],
+    "description": "Bruce Springsteen, often dubbed 'The Boss,' is a quintessential American rock artist known for his poetic and socially conscious lyrics. He explores themes of working-class life, American dreams and disillusionment, personal struggle, redemption, and the search for belonging and identity. His music often paints vivid narratives of everyday people facing challenges and seeking hope. Stylistically, Springsteen blends heartland rock with elements of folk, garage rock, and occasional touches of soul and pop. His sound is characterized by a powerful, anthemic quality, often featuring a full band arrangement with prominent guitars, keyboards, and a driving rhythm section, all delivered with his distinctive gravelly vocals and passionate delivery."
+  },
+  "ACDC": {
+    "name": "ACDC",
+    "genres": [
+      "rock"
+    ],
+    "description": "ACDC is an iconic Australian hard rock band known for their high-energy, blues-infused rock 'n' roll. Their music primarily explores themes of rebellion, partying, everyday life, and a general celebration of rock music itself. Stylistically, they are characterized by Angus Young's distinctive guitar riffs and showmanship, Brian Johnson's (and Bon Scott's) raw, powerful vocals, and a driving rhythm section. They employ a straightforward, no-frills rock approach, focusing on memorable riffs and a strong, consistent beat. They are undeniably a cornerstone of the rock genre."
+  },
+  "Metallica": {
+    "name": "Metallica",
+    "genres": [
+      "rock"
+    ],
+    "description": "Metallica is an American heavy metal band known for their powerful, aggressive sound and complex song structures. Their music often explores dark and introspective themes such as war, societal issues, injustice, death, and personal struggles. While primarily rooted in various subgenres of heavy metal (thrash metal, speed metal, and later venturing into more hard rock territories), their music falls under the broader umbrella of 'rock' from the provided list, due to their foundational impact and widespread appeal within the rock music landscape."
+  },
+  "Elliott Smith": {
+    "name": "Elliott Smith",
+    "genres": [
+      "alternative",
+      "rock",
+      "pop"
+    ],
+    "description": "Elliott Smith was an American singer-songwriter known for his intimate, melancholic, and often heartbreaking music. His lyrics frequently explored themes of depression, loneliness, addiction, and emotional vulnerability, often with a raw honesty and poetic introspection. Musically, he was known for his delicate fingerpicked acoustic guitar work, layered vocal harmonies, and a lo-fi production aesthetic that evolved into more ornate arrangements on later albums. While his core sound was rooted in alternative folk, his music often blurred the lines with indie rock and pop, characterized by strong melodies and a bittersweet beauty."
+  },
+  "Panic! At The Disco": {
+    "name": "Panic! At The Disco",
+    "genres": [
+      "pop",
+      "rock",
+      "alternative"
+    ],
+    "description": "Panic! At The Disco is an American rock band that evolved from an emo-pop outfit into a more theatrical and pop-oriented project, largely centered around frontman Brendon Urie. Their music frequently explores themes of self-discovery, identity, ambition, relationships, and the darker sides of fame and success, often delivered with a sense of dramatic flair and introspection. Musically, they are known for their eclectic and evolving style, incorporating elements of baroque pop, pop-punk, electronic, and show tunes, characterized by Urie's powerful vocal range, intricate arrangements, and often flamboyant instrumentation."
+  },
+  "Pulp": {
+    "name": "Pulp",
+    "genres": [
+      "pop",
+      "rock",
+      "alternative"
+    ],
+    "description": "Pulp, led by the charismatic Jarvis Cocker, are renowned for their witty and observational songwriting that often delves into the mundane, the awkward, and the seedy underbelly of British life. Their music frequently explores themes of social class, sexuality, desire, inadequacy, and the longing for escape, all delivered with a distinct sense of theatricality and dark humor. Stylistically, they combine a sophisticated pop sensibility with a raw, often indie-rock edge, utilizing a diverse sonic palette that includes lush arrangements, driving guitars, and prominent keyboards. Their sound is characterized by a distinctive blend of art-pop flair, new wave influences, and a uniquely British theatricality."
+  },
+  "Boygenius": {
+    "name": "Boygenius",
+    "genres": [
+      "alternative",
+      "rock",
+      "pop"
+    ],
+    "description": "Boygenius is an indie supergroup comprising Phoebe Bridgers, Julien Baker, and Lucy Dacus. Their music is characterized by introspective and raw lyricism, often exploring themes of mental health, queer identity, trauma, friendship, and the complexities of human relationships with a poignant vulnerability. Musically, they blend elements of indie rock, folk, and alternative pop, often featuring intricate harmonies, acoustic instrumentation, and occasionally a full rock band sound, creating a distinctive blend of melancholic and powerful music."
+  },
+  "Alex G": {
+    "name": "Alex G",
+    "genres": [
+      "alternative",
+      "rock",
+      "pop"
+    ],
+    "description": "Alex G, born Alex Giannascoli, is an American musician and singer-songwriter known for his prolific output and lo-fi, introspective style. His music often explores themes of anxiety, alienation, suburban ennui, identity, and the complexities of human relationships, often through the lens of ambiguous narratives and character studies. Sonically, he is known for his DIY aesthetic, incorporating elements of indie rock, folk, bedroom pop, and experimental soundscapes. His styles frequently feature distorted guitars, layered vocals, and often quirky or unsettling sonic textures, ranging from delicate acoustic ballads to more abrasive, feedback-laden tracks."
+  },
+  "Sufjan Stevens": {
+    "name": "Sufjan Stevens",
+    "genres": [
+      "pop",
+      "rock",
+      "alternative"
+    ],
+    "description": "Sufjan Stevens is an American singer-songwriter known for his eclectic and often orchestral approach to indie folk and alternative pop. His music frequently delves into themes of faith, spirituality, American history and geography, personal introspection, love, and loss, often expressed through intricate narratives and allegories. Stylistically, he blends delicate acoustic instrumentation, electronic textures, and grand orchestral arrangements, characterized by his soft, often falsetto vocals, intricate songwriting, and experimental production. While rooted in folk, his discography spans from intimate chamber pop to ambitious art rock and electronic experimentation."
+  },
+  "Big Thief": {
+    "name": "Big Thief",
+    "genres": [
+      "alternative",
+      "rock"
+    ],
+    "description": "Big Thief is an American indie rock band known for their raw, intimate, and often poetic songwriting. Their music frequently delves into themes of vulnerability, love, loss, nature, and the complexities of human relationships, often with a sense of melancholic beauty and existential reflection. Stylistically, they blend elements of folk, country, and indie rock, characterized by Adrianne Lenker's distinct, sometimes wavering vocals, intricate guitar work, and a dynamic range from sparse acoustic arrangements to more expansive, atmospheric soundscapes. They are celebrated for their emotional depth and their ability to create an immersive and deeply personal sonic experience."
+  },
+  "Adrianne Lenker": {
+    "name": "Adrianne Lenker",
+    "genres": [
+      "alternative"
+    ],
+    "description": "Adrianne Lenker is an American musician known for her introspective and poetic songwriting, both as a solo artist and as the lead vocalist of Big Thief. Her music delves into themes of love, loss, nature, identity, and the complexities of human relationships, often exploring vulnerability and the search for meaning. Stylistically, she employs a delicate and often sparse acoustic sound, characterized by intricate fingerpicking and a haunting vocal delivery. Her music frequently incorporates elements of indie folk and alternative country, with a raw and emotionally resonant quality."
+  },
+  "Twenty One Pilots": {
+    "name": "Twenty One Pilots",
+    "genres": [
+      "alternative",
+      "pop",
+      "rock",
+      "rap"
+    ],
+    "description": "Twenty One Pilots is an American musical duo known for their genre-bending sound and introspective lyrics. They frequently explore themes of mental health, anxiety, depression, faith, doubt, and the pressures of societal expectations, often presented through allegorical narratives. Their music characteristically blends elements of alternative rock with pop melodies, hip-hop-influenced rap vocals, and sometimes incorporates reggae or electronic textures. This unique fusion contributes to their distinct sound and wide appeal."
+  },
+  "Placebo": {
+    "name": "Placebo",
+    "genres": [
+      "rock",
+      "alternative"
+    ],
+    "description": "Placebo is a British rock band known for their distinctive blend of alternative rock with elements of glam rock and Goth rock. Their music often delves into themes of identity, sexuality, drug use, alienation, and mental health, frequently exploring the darker aspects of human experience. They are characterized by Brian Molko's unique high-pitched vocals, guitar-driven soundscapes, and often melancholic yet powerful lyrical content. Their style is dramatic and introspective, with a strong emphasis on emotional expression."
+  },
+  "Frank Ocean": {
+    "name": "Frank Ocean",
+    "genres": [
+      "alternative",
+      "soul",
+      "pop",
+      "rap"
+    ],
+    "description": "Frank Ocean is an enigmatic and influential artist known for his genre-bending approach to music. His work often delves into themes of love, loss, identity, sexuality, and the complexities of human relationships, often with a raw vulnerability and introspection. Stylistically, he blends lush, atmospheric soundscapes with intimate, confessional songwriting, incorporating elements of R&B, psychedelia, and electronic music. While rooted in soul and alternative R&B, his music fluidly integrates aspects of pop, rap, and experimental sounds, creating a unique and often melancholic sonic tapestry."
+  },
+  "The Weeknd": {
+    "name": "The Weeknd",
+    "genres": [
+      "pop",
+      "soul",
+      "alternative"
+    ],
+    "description": "The Weeknd, born Abel Tesfaye, is a Canadian singer, songwriter, and record producer known for his genre-bending music. His music frequently explores themes of hedonism, romance, melancholy, and existentialism, often delving into the darker side of celebrity life, relationships, and drug use. Musically, he blends smooth falsetto vocals with atmospheric production, often incorporating elements of R&B, synth-pop, and new wave. His early work leaned into an alternative R&B sound with a dark, atmospheric tone, while later material embraced a more mainstream pop and dance-pop sound, solidifying his status as a global pop superstar while maintaining his signature lyrical depth and mood."
+  },
+  "SZA": {
+    "name": "SZA",
+    "genres": [
+      "soul",
+      "alternative",
+      "pop"
+    ],
+    "description": "SZA is a singer-songwriter known for her introspective and vulnerable storytelling. Her music often explores themes of self-discovery, insecurity, relationships, female empowerment, and the complexities of modern love. She blends soulful vocals with elements of R&B, hip-hop, and alternative pop, creating a distinctive sound characterized by hazy textures, unconventional song structures, and deeply personal lyrics."
+  },
+  "Stevie Wonder": {
+    "name": "Stevie Wonder",
+    "genres": [
+      "pop",
+      "soul"
+    ],
+    "description": "Stevie Wonder is a highly influential American singer-songwriter, multi-instrumentalist, and record producer. His music frequently explores themes of love, spirituality, social justice, and political commentary, often imbued with a sense of optimism and hope. Stylistically, he masterfully blends elements of R&B, funk, jazz, and pop, characterized by his distinctive soulful vocals, innovative use of synthesizers and other electronic instruments, complex arrangements, and infectious grooves."
+  },
+  "Aretha Franklin": {
+    "name": "Aretha Franklin",
+    "genres": [
+      "pop",
+      "soul"
+    ],
+    "description": "Aretha Franklin, known as the 'Queen of Soul,' explored themes of empowerment, love, heartbreak, faith, and social justice in her music. Her powerful and emotive vocal style, often incorporating gospel-infused melismas and a dynamic range, defined her sound. While primarily celebrated for her contributions to soul music, her widespread appeal and numerous chart-topping hits also solidified her place as a pop icon."
+  },
+  "Bill Withers": {
+    "name": "Bill Withers",
+    "genres": [
+      "pop",
+      "soul"
+    ],
+    "description": "Bill Withers was an American singer-songwriter known for his soulful voice and poignant lyrics. His music often explored themes of everyday life, love, hardship, and perseverance, delivered with a directness and emotional honesty that resonated deeply with listeners. He masterfully blended elements of soul, folk, and pop, using sparse arrangements that emphasized his vocals and storytelling. Withers's signature style combined heartfelt lyricism with a smooth, blues-tinged vocal delivery, creating timeless songs that captured universal human experiences."
+  },
+  "Ray Charles": {
+    "name": "Ray Charles",
+    "genres": [
+      "pop",
+      "soul"
+    ],
+    "description": "Ray Charles was a groundbreaking American singer, songwriter, and pianist, often referred to as 'The Genius.' His music profoundly explored themes of love, heartache, joy, and the human experience, often delivered with a raw and soulful authenticity. Charles masterfully blended various styles, incorporating elements of gospel, blues, jazz, and country into his distinct sound. He was a pioneer in developing soul music, taking gospel fervor and infusing it with secular lyrics, and achieved immense success in both the pop and soul genres."
+  },
+  "Etta James": {
+    "name": "Etta James",
+    "genres": [
+      "soul",
+      "pop"
+    ],
+    "description": "Etta James was a powerhouse vocalist renowned for her passionate and often raw delivery. Her music frequently explored themes of love, heartache, strength, and vulnerability, capturing the full spectrum of human emotion. While primarily known for soul, her versatility also saw her delve into R&B, blues, and jazz, often incorporating elements of big band arrangements and gospel-infused vocals into her distinct style. Her powerful voice and dramatic interpretations made her a compelling figure across multiple musical landscapes."
+  },
+  "Diana Ross": {
+    "name": "Diana Ross",
+    "genres": [
+      "pop",
+      "soul"
+    ],
+    "description": "Diana Ross is a legendary American singer and actress, known for her powerful vocals and glamorous stage presence. Her music often explores themes of love, relationships, empowerment, and joy, delivered with a sophisticated elegance. Stylistically, she's known for her smooth delivery, dynamic range, and the ability to convey deep emotion. While rooted in soul, her solo career largely embraced and defined pop music with its melodic hooks and accessible arrangements."
+  },
+  "Bob Dylan": {
+    "name": "Bob Dylan",
+    "genres": [
+      "rock",
+      "pop"
+    ],
+    "description": "Bob Dylan is a highly influential American singer-songwriter, often called the 'voice of a generation.' His music deeply explores themes of social injustice, war, religion, love, and the human condition, often weaving complex narratives and poetic lyricism. While primarily known for his folk roots, he masterfully incorporates various styles, from blues and country to rock and gospel, constantly evolving his sound throughout his career."
+  },
+  "Leonard Cohen": {
+    "name": "Leonard Cohen",
+    "genres": ["alternative"],
+    "description": "Leonard Cohen was a Canadian singer-songwriter, poet, and novelist whose work explored themes of love, loss, faith, desire, and the complexities of human relationships. His music often delved into melancholic introspection, with lyrics characterized by their poetic depth, philosophical weight, and often stark, honest appraisal of the human condition. While not strictly confined to the genres provided, his music often had folk and ballad influences, known for its baritone voice and often sparse, atmospheric arrangements, allowing the power of his lyrics to take center stage."
+  },
+  "Joni Mitchell": {
+    "name": "Joni Mitchell",
+    "genres": [
+      "pop",
+      "rock"
+    ],
+    "description": "Joni Mitchell is a highly influential Canadian singer-songwriter known for her introspective and poetic lyrics, often exploring themes of love, relationships, nature, societal observations, and personal introspection. Her musical style is eclectic and innovative, evolving from folk and acoustic beginnings to incorporate elements of jazz, rock, and pop. She frequently uses open tunings on her guitar, creating a unique and complex harmonic landscape for her compositions."
+  },
+  "Simon & Garfunkel": {
+    "name": "Simon & Garfunkel",
+    "genres": [
+      "pop",
+      "rock"
+    ],
+    "description": "Simon & Garfunkel were an American folk-rock duo known for their intricate harmonies and poetic, often introspective lyrics. They explored themes of alienation, social commentary, urban life, love, and the search for meaning in a rapidly changing world. Their music blended folk sensibilities with pop melodies, often incorporating acoustic instrumentation alongside subtle orchestral arrangements, creating a distinctive sound that resonated with a wide audience."
+  },
+  "Carole King": {
+    "name": "Carole King",
+    "genres": [
+      "pop",
+      "rock",
+      "soul"
+    ],
+    "description": "Carole King is a highly influential American singer-songwriter known for crafting deeply personal and relatable narratives in her music. Her work often explores themes of love, relationships, heartache, self-discovery, and the everyday experiences of life, with a particular focus on the female perspective. Musically, she employs a warm, melodic style, often driven by her distinctive piano playing, which incorporates elements of pop songcraft, rock instrumentation, and soulful vocal delivery, creating a timeless and intimate sound."
+  },
+  "Fleetwood Mac": {
+    "name": "Fleetwood Mac",
+    "genres": [
+      "pop",
+      "rock"
+    ],
+    "description": "Fleetwood Mac is known for their melodic rock and pop sound, often exploring themes of love, relationships, heartache, and personal struggles. Their music frequently delves into the complexities of human connection, capturing both the euphoria and the pain of romance and friendship, often mirroring the internal dynamics and interpersonal relationships within the band itself. They blend folk-rock sensibilities with polished pop arrangements, characterized by intricate vocal harmonies, memorable guitar work, and a strong sense of emotional authenticity."
+  },
+  "ABBA": {
+    "name": "ABBA",
+    "genres": [
+      "pop"
+    ],
+    "description": "ABBA, the iconic Swedish pop group, is renowned for their catchy melodies, lush vocal harmonies, and sophisticated arrangements. Their music primarily explores themes of love, relationships (both the joys and heartbreaks), and sometimes a sense of nostalgic longing or the bittersweet passage of time. They are masters of the pop ballad and upbeat disco-infused tracks, often incorporating rich instrumentation, multi-layered vocals, and a polished, accessible style that made their songs universally appealing."
+  }
+}

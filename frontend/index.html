@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SongRAPTOR - AI Lyrics Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 SongRAPTOR</h1>
+            <p>AI-powered song lyrics generation inspired by your favorite styles</p>
+        </header>
+
+        <main>
+            <div class="generator-section">
+                <div class="input-group">
+                    <label for="generateQuery">Describe the song you want to generate:</label>
+                    <textarea 
+                        id="generateQuery" 
+                        placeholder="Examples:
+• generate a song in style of band The Beatles
+• create a song in genre pop
+• write a song about being happy with words dance and sing"></textarea>
+                </div>
+
+                <div class="controls-group">
+                    <div class="control-item">
+                        <label for="generateTopK">Number of musical examples to use:</label>
+                        <select id="generateTopK">
+                            <option value="2">2 examples</option>
+                            <option value="3" selected>3 examples</option>
+                            <option value="4">4 examples</option>
+                            <option value="5">5 examples</option>
+                        </select>
+                    </div>
+                    
+                    <button id="generateButton" onclick="generateLyrics()">
+                        <span class="button-text">Generate Lyrics</span>
+                        <span class="loading-spinner" style="display: none;">⏳</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="generateResults" class="results-container">
+                <div class="welcome-message">
+                    <h3>🎶 Create Original Lyrics</h3>
+                    <p>Describe the genre, artist, or theme you want to emulate, and AI will generate unique lyrics inspired by real musical examples from the database.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <strong>🎵 Style Matching</strong>
+                            <p>Finds similar musical patterns and structures</p>
+                        </div>
+                        <div class="feature">
+                            <strong>📝 Original Content</strong>
+                            <p>Creates completely new lyrics, never copied</p>
+                        </div>
+                        <div class="feature">
+                            <strong>🎼 Professional Quality</strong>
+                            <p>16-24 line songs with proper structure</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>AI Lyrics Generation with RAPTOR RAG</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

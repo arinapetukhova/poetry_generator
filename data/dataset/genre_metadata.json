@@ -1,0 +1,22 @@
+{
+  "pop": {
+    "genre": "pop",
+    "description": "Pop music is a broad and commercially driven genre, often characterized by catchy melodies, accessible song structures, and a focus on mainstream appeal. Common topics revolve around everyday experiences, relationships (love, heartbreak, friendship), aspiration, celebration, and sometimes social commentary delivered in an approachable manner. The lyrical style tends to be direct, conversational, and relatively simple, with an emphasis on memorable hooks and relatable phrases. The mood is typically upbeat, energetic, and optimistic, designed to be easily enjoyable and danceable, though it can also be melancholic or romantic depending on the song's theme. Themes explored frequently include romantic love in its various stages, self-empowerment, overcoming challenges, party culture, youthful exuberance, and the desire for connection and understanding."
+  },
+  "rock": {
+    "genre": "Rock",
+    "description": "Rock is a broad and dynamic genre characterized by its prominent use of electric guitars, bass, drums, and often vocals. Common topics include love, rebellion, social commentary, personal struggle, empowerment, and everyday life. Styles of writing can range from poetic and metaphorical to direct and narrative, often incorporating storytelling and relatable experiences. The mood evoked by rock is highly diverse, spanning energetic, rebellious, melancholic, joyful, angry, and reflective. Key themes explored include individuality, freedom, disillusionment, conformity versus non-conformity, youth culture, political and social issues, and the human condition."
+  },
+  "alternative": {
+    "genre": "Alternative",
+    "description": "Alternative music emerged as a distinct genre from the mainstream, often characterized by its diverse sonic palette and willingness to experiment with traditional rock structures. Common topics frequently revolve around introspection, social commentary, alienation, existentialism, relationships (often with a nuanced or cynical perspective), and the human condition, often exploring the darker or more complex aspects. Lyrical styles can range from poetic and metaphorical to direct and conversational, often employing irony, wit, and a sense of vulnerability or disillusionment. The mood is highly variable, encompassing angst, melancholy, cynicism, hope, defiance, and a pervasive sense of yearning or introspection. Themes explored often include authenticity, identity, nonconformity, the absurdity of existence, mental health, societal pressures, and the search for meaning in a complex world. Musically, it often incorporates elements from punk, new wave, indie rock, and folk, but pushes boundaries with unconventional song structures, instrumentation, and vocal delivery."
+  },
+  "rap": {
+    "genre": "Rap",
+    "description": "Rap is a vibrant and diverse genre characterized by rhythmic spoken word (rapping) over a musical beat. Common topics include social commentary on inequality, poverty, and injustice; personal narratives of struggle, ambition, and success; celebration of cultural identity; and expressions of love, betrayal, and resilience. Lyrical styles range from direct and confrontational to poetic and metaphorical, often employing intricate rhyming schemes, complex wordplay, and internal rhyme. The mood can be energetic, defiant, boastful, melancholic, angry, or celebratory, reflecting the wide spectrum of human experience. Themes often explored include social justice, street life, the pursuit of wealth and power, overcoming adversity, identity, community, and the human condition in urban environments."
+  },
+  "soul": {
+    "genre": "Soul",
+    "description": "Soul is a genre of music that emerged from the African-American community in the United States, combining elements of gospel, rhythm and blues, and jazz. Common topics include love (both romantic and unrequited), heartache, social justice, personal struggles, and the search for identity and meaning. Styles of writing often feature poetic and evocative language, using metaphors and imagery to convey deep emotions. The mood it gives is typically passionate, heartfelt, often melancholic yet hopeful, and deeply introspective. Themes explored include the complexities of human relationships, the resilience of theal-human spirit, the pursuit of freedom and equality, and the celebration of life's joys and sorrows."
+  }
+}

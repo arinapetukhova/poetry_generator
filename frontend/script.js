@@ -1,0 +1,200 @@
+const API_BASE = 'http://localhost:8000';
+
+// DOM elements
+const generateButton = document.getElementById('generateButton');
+const generateQuery = document.getElementById('generateQuery');
+const generateTopK = document.getElementById('generateTopK');
+const generateResults = document.getElementById('generateResults');
+
+// Generate lyrics functionality
+async function generateLyrics() {
+    const query = generateQuery.value.trim();
+    
+    if (!query) {
+        showError('Please describe the song you want to generate');
+        return;
+    }
+    
+    if (query.length < 10) {
+        showError('Please provide a more detailed description (at least 10 characters)');
+        return;
+    }
+    
+    const topK = parseInt(generateTopK.value);
+    
+    // Show loading state
+    setLoadingState(true);
+    
+    try {
+        const response = await fetch(`${API_BASE}/generate`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                query: query,
+                top_k: topK
+            })
+        });
+        
+        if (!response.ok) {
+            const errorData = await response.json().catch(() => ({}));
+            throw new Error(errorData.detail || `HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        displayGeneratedLyrics(data);
+        
+    } catch (error) {
+        console.error('Generation error:', error);
+        showError(`Failed to generate lyrics: ${error.message}`);
+    } finally {
+        setLoadingState(false);
+    }
+}
+
+function displayGeneratedLyrics(data) {
+    let html = `
+        <div class="success">
+            🎉 Successfully generated lyrics! The AI analyzed ${data.context.split('### Example').length - 1} musical examples to create this original composition.
+        </div>
+        
+        <div class="result-item lyrics-result">
+            <div class="result-header">
+                <h3>🎵 Your Generated Lyrics</h3>
+            </div>
+            <div class="lyrics-content">${formatLyrics(data.lyrics)}</div>
+        </div>
+        
+        <div class="result-item context-result">
+            <div class="result-header">
+                <h3>📚 Musical Inspiration Used</h3>
+                <span class="similarity-badge">${data.context.split('### Example').length - 1} examples analyzed</span>
+            </div>
+            <div class="result-content">
+                ${formatContext(data.context)}
+            </div>
+        </div>
+    `;
+    
+    generateResults.innerHTML = html;
+    
+    // Scroll to results
+    generateResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function formatLyrics(lyrics) {
+    // Clean and format the lyrics
+    return escapeHtml(lyrics)
+        .replace(/\n\n/g, '<br><br>')
+        .replace(/\n/g, '<br>')
+        .replace(/(\[.*?\])/g, '<em>$1</em>') // Format chorus/bridge markers
+        .replace(/(Verse \d+|Chorus|Bridge|Outro)/g, '<strong>$1</strong>'); // Format section headers
+}
+
+function formatContext(context) {
+    const examples = context.split('### Example');
+    let html = '';
+    
+    examples.forEach((example, index) => {
+        if (index === 0) return; // Skip the first empty split
+        
+        const lines = example.split('\n');
+        const header = lines[0]?.trim() || `Example ${index}`;
+        const content = lines.slice(1).join('\n').trim();
+        
+        if (content) {
+            html += `
+                <div class="context-item">
+                    <div class="context-header">
+                        <span>${header}</span>
+                    </div>
+                    <div class="context-text">${escapeHtml(content)}</div>
+                </div>
+            `;
+        }
+    });
+    
+    return html || '<p>No context examples available.</p>';
+}
+
+function setLoadingState(isLoading) {
+    const buttonText = generateButton.querySelector('.button-text');
+    const spinner = generateButton.querySelector('.loading-spinner');
+    
+    if (isLoading) {
+        buttonText.textContent = 'Generating...';
+        spinner.style.display = 'inline-block';
+        generateButton.disabled = true;
+        
+        generateResults.innerHTML = `
+            <div class="loading">
+                <div class="spinner"></div>
+                <h3>Creating Your Lyrics</h3>
+                <p>Searching musical database and generating original content...</p>
+                <p>This usually takes 10-20 seconds</p>
+            </div>
+        `;
+    } else {
+        buttonText.textContent = 'Generate Lyrics';
+        spinner.style.display = 'none';
+        generateButton.disabled = false;
+    }
+}
+
+function showError(message) {
+    generateResults.innerHTML = `
+        <div class="error">
+            <h3>❌ Error</h3>
+            <p>${escapeHtml(message)}</p>
+            <button onclick="clearError()" style="margin-top: 10px; padding: 8px 16px; background: #e53e3e; color: white; border: none; border-radius: 5px; cursor: pointer;">Try Again</button>
+        </div>
+    `;
+}
+
+function clearError() {
+    generateResults.innerHTML = `
+        <div class="welcome-message">
+            <h3>🎶 Create Original Lyrics</h3>
+            <p>Describe the style, theme, or artist you want to emulate, and our AI will generate unique lyrics inspired by real musical examples from our database.</p>
+        </div>
+    `;
+}
+
+// Utility function to escape HTML
+function escapeHtml(unsafe) {
+    if (!unsafe) return '';
+    return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+// Event listeners
+generateQuery.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter' && e.ctrlKey) {
+        generateLyrics();
+    }
+});
+
+// Add some example prompts for user convenience
+const examplePrompts = [
+    "generate a song in style of band The Beatles about summer love",
+    "create a rock ballad about heartbreak with powerful guitar riffs",
+    "write a pop song about friendship in the style of Taylor Swift",
+    "generate hip-hop lyrics about urban life inspired by Kendrick Lamar",
+    "create a country song about small town life with storytelling verses"
+];
+
+// Add click to focus on textarea when clicking welcome message
+document.addEventListener('DOMContentLoaded', function() {
+    const welcomeMessage = document.querySelector('.welcome-message');
+    if (welcomeMessage) {
+        welcomeMessage.style.cursor = 'pointer';
+        welcomeMessage.addEventListener('click', function() {
+            generateQuery.focus();
+        });
+    }
+});
