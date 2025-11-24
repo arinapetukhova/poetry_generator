@@ -3,7 +3,10 @@
   "builds": [
     {
       "src": "api/**/*.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "50mb"
+      }
     },
     {
       "src": "frontend/**",
@@ -19,5 +22,6 @@
       "src": "/(.*)",
       "dest": "frontend/$1"
     }
-  ]
+  ],
+  "installCommand": "cd api && pip install -r requirements.txt --target .vercel/python/py3.12/api/_vendor"
 }
