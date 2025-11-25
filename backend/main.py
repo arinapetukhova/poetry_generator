@@ -4,12 +4,15 @@ from fastapi.responses import FileResponse
 import os
 import uvicorn
 import threading
-import time
+from dotenv import load_dotenv
+import os
 from google import genai
 import logging
 from core.models import GenerateRequest, GenerateResponse
 
 # Configure logging
+load_dotenv()
+GOOGLE_KEY = os.getenv("GEMINI_API")
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
