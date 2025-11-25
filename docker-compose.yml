@@ -9,7 +9,6 @@ services:
       - "8000:8000"
     volumes:
       - ./backend/chroma_db:/app/chroma_db
-      - ./backend/data:/app/data
     environment:
       - PYTHONUNBUFFERED=1
     restart: unless-stopped
@@ -28,16 +27,3 @@ services:
     depends_on:
       - backend
     restart: unless-stopped
-
-  # Optional: Add a service to initialize the database if needed
-  db-init:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    command: ["python", "create_db.py"]
-    volumes:
-      - ./backend/chroma_db:/app/chroma_db
-      - ./backend/data:/app/data
-    depends_on:
-      - backend
-    profiles: ["init"]

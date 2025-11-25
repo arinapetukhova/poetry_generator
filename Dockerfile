@@ -19,7 +19,7 @@ COPY backend/ .
 COPY frontend/ ./frontend/
 
 # Create necessary directories
-RUN mkdir -p chroma_db data/dataset
+RUN mkdir -p chroma_db
 
 # Create non-root user
 RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app

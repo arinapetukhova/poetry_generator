@@ -11,7 +11,7 @@ RUN pip install -r requirements.txt
 # Then copy the rest of the application
 COPY . .
 
-RUN mkdir -p chroma_db data/dataset
+RUN mkdir -p chroma_db
 
 EXPOSE 8000
 
