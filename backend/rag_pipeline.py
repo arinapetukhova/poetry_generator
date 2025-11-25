@@ -13,7 +13,6 @@ class SongRAPTOR:
         self.parser = SongParser()
         self.genre_hierarchy: List[Genre] = []
         self.chroma_manager = ChromaManager(self.config)
-        # No embedder needed - ChromaDB handles embeddings
 
     def load_songs(self, json_data: List[dict]):
         self.genre_hierarchy = self.parser.parse_to_hierarchy(json_data)
@@ -49,7 +48,7 @@ class SongRAPTOR:
                 documents.append(ChromaDocument(
                     id=str(uuid.uuid4()),
                     text=genre_text,
-                    embedding=None,  # No pre-computed embedding
+                    embedding=None,
                     metadata={"context": genre.name,
                               "hierarchy_path": json.dumps([genre.name])},
                     hierarchy_level="genre"
@@ -74,7 +73,7 @@ class SongRAPTOR:
                     documents.append(ChromaDocument(
                         id=str(uuid.uuid4()),
                         text=artist_text,
-                        embedding=None,  # No pre-computed embedding
+                        embedding=None,
                         metadata={
                             "context": f"{genre.name} → {singer.name}",
                             "hierarchy_path": json.dumps([genre.name, singer.name])
@@ -89,7 +88,7 @@ class SongRAPTOR:
                     documents.append(ChromaDocument(
                         id=str(uuid.uuid4()),
                         text=song_text,
-                        embedding=None,  # No pre-computed embedding
+                        embedding=None,
                         metadata={
                             "context": f"{genre.name} → {singer.name} → {song.title}",
                             "hierarchy_path": json.dumps([genre.name, singer.name, song.title])
@@ -100,7 +99,6 @@ class SongRAPTOR:
         self.chroma_manager.add_documents(documents, batch_size=5000)
 
     def search(self, query: str, top_k: int = 5) -> List[SearchResult]:
-        # Use ChromaDB's built-in embedding
         return self.chroma_manager.search_with_text(query, n_results=top_k)
 
     def get_statistics(self):

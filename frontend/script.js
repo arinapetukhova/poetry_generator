@@ -1,13 +1,10 @@
-// Replace the API_BASE line with this:
 const API_BASE = 'https://poetry-generator-ku0q.onrender.com';
 
-// DOM elements
 const generateButton = document.getElementById('generateButton');
 const generateQuery = document.getElementById('generateQuery');
 const generateTopK = document.getElementById('generateTopK');
 const generateResults = document.getElementById('generateResults');
 
-// Generate lyrics functionality
 async function generateLyrics() {
     const query = generateQuery.value.trim();
     
@@ -23,7 +20,6 @@ async function generateLyrics() {
     
     const topK = parseInt(generateTopK.value);
     
-    // Show loading state
     setLoadingState(true);
     
     try {
@@ -63,7 +59,20 @@ function displayGeneratedLyrics(data) {
         <div class="success">
             🎉 Successfully generated lyrics! The AI analyzed ${data.context.split('### Example').length - 1} musical examples to create this original composition.
         </div>
-        
+    `;
+
+    if (data.reasoning) {
+        html += `
+            <div class="result-item reasoning-result">
+                <div class="result-header">
+                    <h3>🤔 AI Reasoning Process</h3>
+                </div>
+                <div class="reasoning-content">${formatReasoning(data.reasoning)}</div>
+            </div>
+        `;
+    }
+    
+    html += `
         <div class="result-item lyrics-result">
             <div class="result-header">
                 <h3>🎵 Your Generated Lyrics</h3>
@@ -84,17 +93,23 @@ function displayGeneratedLyrics(data) {
     
     generateResults.innerHTML = html;
     
-    // Scroll to results
     generateResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
+function formatReasoning(reasoning) {
+    return escapeHtml(reasoning)
+        .replace(/\n\n/g, '<br><br>')
+        .replace(/\n/g, '<br>')
+        .replace(/(\*\*(.*?)\*\*)/g, '<strong>$2</strong>')
+        .replace(/(\*(.*?)\*)/g, '<em>$2</em>');
+}
+
 function formatLyrics(lyrics) {
-    // Clean and format the lyrics
     return escapeHtml(lyrics)
         .replace(/\n\n/g, '<br><br>')
         .replace(/\n/g, '<br>')
-        .replace(/(\[.*?\])/g, '<em>$1</em>') // Format chorus/bridge markers
-        .replace(/(Verse \d+|Chorus|Bridge|Outro)/g, '<strong>$1</strong>'); // Format section headers
+        .replace(/(\[.*?\])/g, '<em>$1</em>')
+        .replace(/(Verse \d+|Chorus|Bridge|Outro)/g, '<strong>$1</strong>');
 }
 
 function formatContext(context) {
@@ -102,7 +117,7 @@ function formatContext(context) {
     let html = '';
     
     examples.forEach((example, index) => {
-        if (index === 0) return; // Skip the first empty split
+        if (index === 0) return;
         
         const lines = example.split('\n');
         const header = lines[0]?.trim() || `Example ${index}`;
@@ -159,12 +174,25 @@ function clearError() {
     generateResults.innerHTML = `
         <div class="welcome-message">
             <h3>🎶 Create Original Lyrics</h3>
-            <p>Describe the style, theme, or artist you want to emulate, and our AI will generate unique lyrics inspired by real musical examples from our database.</p>
+            <p>Describe the genre, artist, or theme you want to emulate, and AI will generate unique lyrics inspired by real musical examples from the database.</p>
+            <div class="features">
+                <div class="feature">
+                    <strong>🎵 Style Matching</strong>
+                    <p>Finds similar musical patterns and structures</p>
+                </div>
+                <div class="feature">
+                    <strong>📝 Original Content</strong>
+                    <p>Creates new lyrics without copying texts from references</p>
+                </div>
+                <div class="feature">
+                    <strong>🎼 Professional Quality</strong>
+                    <p>16-24 line songs with proper structure</p>
+                </div>
+            </div>
         </div>
     `;
 }
 
-// Utility function to escape HTML
 function escapeHtml(unsafe) {
     if (!unsafe) return '';
     return unsafe
@@ -175,23 +203,12 @@ function escapeHtml(unsafe) {
         .replace(/'/g, "&#039;");
 }
 
-// Event listeners
 generateQuery.addEventListener('keypress', function(e) {
     if (e.key === 'Enter' && e.ctrlKey) {
         generateLyrics();
     }
 });
 
-// Add some example prompts for user convenience
-const examplePrompts = [
-    "generate a song in style of band The Beatles about summer love",
-    "create a rock ballad about heartbreak with powerful guitar riffs",
-    "write a pop song about friendship in the style of Taylor Swift",
-    "generate hip-hop lyrics about urban life inspired by Kendrick Lamar",
-    "create a country song about small town life with storytelling verses"
-];
-
-// Add click to focus on textarea when clicking welcome message
 document.addEventListener('DOMContentLoaded', function() {
     const welcomeMessage = document.querySelector('.welcome-message');
     if (welcomeMessage) {

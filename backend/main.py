@@ -9,10 +9,12 @@ import os
 from google import genai
 import logging
 from core.models import GenerateRequest, GenerateResponse
+import re
 
-# Configure logging
+
 load_dotenv()
 GOOGLE_KEY = os.getenv("GEMINI_API")
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -26,57 +28,41 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Global variables
 raptor = None
-models_loaded = False
-model_loading_error = None
+started = False
 
-# Import SongRAPTOR
 def initialize_raptor():
     global raptor, models_loaded, model_loading_error
     try:
         from rag_pipeline import SongRAPTOR
-        logger.info("Starting model loading in background...")
         raptor = SongRAPTOR()
-        models_loaded = True
-        logger.info("All models loaded successfully!")
+        started = True
+        logger.info("App successfully started!")
     except Exception as e:
-        model_loading_error = str(e)
         logger.error(f"Model loading failed: {e}")
-        models_loaded = False
 
 @app.on_event("startup")
 async def startup_event():
-    # Bind to port immediately, then load models in background
+
     port = os.environ.get("PORT", 8000)
     logger.info(f"FastAPI server starting on port {port}")
     
-    # Start model loading in background thread
     thread = threading.Thread(target=initialize_raptor)
     thread.daemon = True
     thread.start()
 
-# Health check endpoint
+
 @app.get("/health")
 async def health_check():
-    if not models_loaded and model_loading_error:
-        return {
-            "status": "degraded", 
-            "message": "Server running but models still loading",
-            "models_loaded": models_loaded,
-            "error": model_loading_error
-        }
-    elif models_loaded:
-        return {
+    if started:
+       return {
             "status": "healthy",
-            "message": "Server running with all models loaded",
-            "models_loaded": models_loaded
+            "message": "Server running correctly"
         }
     else:
         return {
             "status": "loading",
-            "message": "Server running, models are still loading",
-            "models_loaded": models_loaded
+            "message": "RAPTOR wasn't initialized"
         }
 
 @app.get("/")
@@ -92,18 +78,9 @@ async def serve_static(path: str):
 
 @app.post("/generate", response_model=GenerateResponse)
 async def generate_lyrics(request: GenerateRequest):
-    # Check if models are loaded
-    if not models_loaded:
-        if model_loading_error:
-            raise HTTPException(
-                status_code=503, 
-                detail=f"Models failed to load: {model_loading_error}. Please check the server logs."
-            )
-        else:
-            raise HTTPException(
-                status_code=503, 
-                detail="Models are still loading. Please try again in 30-60 seconds."
-            )
+
+    if not started:
+        raise HTTPException(status_code=500, detail="Not fully running")
     
     if not raptor:
         raise HTTPException(status_code=500, detail="RAPTOR not initialized")
@@ -111,11 +88,9 @@ async def generate_lyrics(request: GenerateRequest):
     try:
         logger.info(f"Generating lyrics for query: {request.query}")
         
-        # Search for relevant examples
         results = raptor.search(request.query, request.top_k)
         logger.info(f"Found {len(results)} relevant examples")
         
-        # Format context
         def format_rag_context(results):
             context = ""
             for i, r in enumerate(results):
@@ -125,46 +100,54 @@ async def generate_lyrics(request: GenerateRequest):
 
         def build_generation_prompt(query, rag_context):
             return f"""
-            You are a lyrics generator.
+                You are a professional lyrics generator.
 
-            User request:
-            "{query}"
+                USER REQUEST: {query}
 
-            Below are style, rhythmic patterns and schemes, and thematic examples retrieved from a music database.
-            Analyze them for:
-            - tone
-            - structure
-            - vocabulary
-            - rhythm
-            - pattern
-            - themes
-            - mood
+                MUSICAL EXAMPLES AND STYLE REFERENCES:
+                {rag_context}
 
-            DO NOT copy the lyrics.
-            Instead, write **original lyrics** inspired by the style.
+                INSTRUCTIONS:
+                - Analyze the musical examples for tone, structure, vocabulary, rhythm, patterns, themes, and mood
+                - Create COMPLETELY ORIGINAL lyrics - DO NOT copy phrases or lines
+                - Match the musical style, rhyme schemes, and structure from the examples
+                - Write 16-24 lines with proper song structure (verses, chorus, bridge, outro)
+                - Focus on the emotional tone, rhythmic patterns, and rhyme schemes
 
-            --- Retrieved Examples ---
-            {rag_context}
-            --- END ---
+                OUTPUT FORMAT:
+                Reasoning: [Your analysis of the examples (according to instructions) and how you'll approach the lyrics]
 
-            Now write a NEW set of lyrics inspired by the request and examples.
-            Length: 16–24 lines.
-            Avoid repeating phrases from the examples. IMPORTANT: Use examples' rhythmic schemes and song structures!
-            """
+                Generated Lyrics:
+                """
 
         formatted_context = format_rag_context(results)
         prompt = build_generation_prompt(request.query, formatted_context)
         
-        # Generate lyrics using Gemini
         client = genai.Client(api_key=GOOGLE_KEY)
         response = client.models.generate_content(
             model="gemini-2.5-flash",
             contents=prompt
         )
 
+        response_text = response.text
+        # response_text = re.sub(r'\*\*(.*?)\*\*', r'\1', response_text)
+        # response_text = re.sub(r'\*(.*?)\*', r'\1', response_text)
+        # response_text = re.sub(r'__(.*?)__', r'\1', response_text)
+        # response_text = re.sub(r'_(.*?)_', r'\1', response_text)
+        # response_text.strip()
+
+        reasoning = ""
+        lyrics = ""
+        if "Reasoning:" in response_text and "Generated Lyrics:" in response_text:
+            parts = response_text.split("Generated Lyrics:", 1)
+            reasoning = parts[0].replace("Reasoning:", "").strip()
+        else:
+            lyrics = response_text
+
         logger.info("Successfully generated lyrics")
         return GenerateResponse(
-            lyrics=response.text,
+            lyrics=lyrics,
+            reasoning=reasoning,
             context=formatted_context,
             prompt=prompt
         )

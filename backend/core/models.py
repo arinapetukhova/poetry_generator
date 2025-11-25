@@ -47,5 +47,6 @@ class GenerateRequest(BaseModel):
 
 class GenerateResponse(BaseModel):
     lyrics: str
+    reasoning: str 
     context: str
     prompt: str
