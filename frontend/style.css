@@ -363,3 +363,25 @@ footer {
         gap: 10px;
     }
 }
+
+.retry-button {
+    background-color: #c53030;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+.retry-button:hover {
+    background-color: #902323;
+    transform: scale(1.05);
+}
+
+.retry-button:active {
+    transform: scale(0.95);
+}

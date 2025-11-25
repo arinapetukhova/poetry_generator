@@ -9,7 +9,6 @@ import os
 from google import genai
 import logging
 from core.models import GenerateRequest, GenerateResponse
-import re
 
 
 load_dotenv()
@@ -31,7 +30,7 @@ app.add_middleware(
 raptor = None
 
 def initialize_raptor():
-    global raptor, models_loaded, model_loading_error
+    global raptor
     try:
         from rag_pipeline import SongRAPTOR
         raptor = SongRAPTOR()
@@ -130,7 +129,7 @@ async def generate_lyrics(request: GenerateRequest):
         if "Reasoning:" in response_text and "Generated Lyrics:" in response_text:
             parts = response_text.split("Generated Lyrics:", 1)
             reasoning = parts[0].replace("Reasoning:", "").strip()
-            lyrics = parts[0].replace("Generated Lyrics:", "").strip()
+            lyrics = parts[1].strip()
         else:
             lyrics = response_text
 

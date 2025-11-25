@@ -55,14 +55,9 @@ async function generateLyrics() {
 }
 
 function displayGeneratedLyrics(data) {
-    let html = `
-        <div class="success">
-            🎉 Successfully generated lyrics! The AI analyzed ${data.context.split('### Example').length - 1} musical examples to create this original composition.
-        </div>
-    `;
 
     if (data.reasoning) {
-        html += `
+        html = `
             <div class="result-item reasoning-result">
                 <div class="result-header">
                     <h3>🤔 AI Reasoning Process</h3>
