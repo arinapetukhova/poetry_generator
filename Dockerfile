@@ -14,10 +14,10 @@ COPY backend/requirements.txt .
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code AND chroma_db folder
+# Copy application code - FIXED PATHS
 COPY backend/ .
 COPY frontend/ ./frontend/
-COPY chroma_db/ ./chroma_db/  # Copy your pre-built ChromaDB
+COPY chroma_db/ ./chroma_db/
 
 # Create non-root user
 RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
