@@ -1,4 +1,5 @@
-const API_BASE = 'http://localhost:8000';
+// Replace the API_BASE line with this:
+const API_BASE = 'https://poetry-generator-7zs2.onrender.com';
 
 // DOM elements
 const generateButton = document.getElementById('generateButton');
@@ -26,6 +27,8 @@ async function generateLyrics() {
     setLoadingState(true);
     
     try {
+        console.log('Sending request to:', `${API_BASE}/generate`);
+        
         const response = await fetch(`${API_BASE}/generate`, {
             method: 'POST',
             headers: {
@@ -36,6 +39,8 @@ async function generateLyrics() {
                 top_k: topK
             })
         });
+        
+        console.log('Response status:', response.status);
         
         if (!response.ok) {
             const errorData = await response.json().catch(() => ({}));
@@ -147,6 +152,14 @@ function showError(message) {
         <div class="error">
             <h3>❌ Error</h3>
             <p>${escapeHtml(message)}</p>
+            <div style="margin-top: 15px; font-size: 0.9em; color: #666;">
+                <p><strong>Debugging info:</strong></p>
+                <ul>
+                    <li>API URL: ${API_BASE}</li>
+                    <li>Check if backend is running</li>
+                    <li>Try refreshing the page</li>
+                </ul>
+            </div>
             <button onclick="clearError()" style="margin-top: 10px; padding: 8px 16px; background: #e53e3e; color: white; border: none; border-radius: 5px; cursor: pointer;">Try Again</button>
         </div>
     `;
