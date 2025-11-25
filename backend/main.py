@@ -14,7 +14,6 @@ GOOGLE_API_KEY = os.getenv("GEMINI_API")
 
 app = FastAPI(title="SongRAPTOR API", description="AI-powered song lyrics generation")
 
-# CORS middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -25,7 +24,7 @@ app.add_middleware(
 
 # Serve frontend files
 @app.get("/")
-async def read_index():
+async def read_root():
     return FileResponse('frontend/index.html')
 
 @app.get("/{path:path}")
@@ -120,4 +119,5 @@ if os.path.exists("../frontend"):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    port = int(os.environ.get("PORT", 10000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
