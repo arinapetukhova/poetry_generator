@@ -167,6 +167,8 @@ function showError(message) {
         <div class="error">
             <h3>❌ Error</h3>
             <p>${escapeHtml(message)}</p>
+            <button onclick="clearError()" class="retry-button">Try Again</button>
+        </div>
     `;
 }
 
