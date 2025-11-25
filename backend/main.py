@@ -29,14 +29,12 @@ app.add_middleware(
 )
 
 raptor = None
-started = False
 
 def initialize_raptor():
     global raptor, models_loaded, model_loading_error
     try:
         from rag_pipeline import SongRAPTOR
         raptor = SongRAPTOR()
-        started = True
         logger.info("App successfully started!")
     except Exception as e:
         logger.error(f"Model loading failed: {e}")
@@ -54,7 +52,7 @@ async def startup_event():
 
 @app.get("/health")
 async def health_check():
-    if started:
+    if not raptor:
        return {
             "status": "healthy",
             "message": "Server running correctly"
@@ -78,10 +76,6 @@ async def serve_static(path: str):
 
 @app.post("/generate", response_model=GenerateResponse)
 async def generate_lyrics(request: GenerateRequest):
-
-    if not started:
-        raise HTTPException(status_code=500, detail="Not fully running")
-    
     if not raptor:
         raise HTTPException(status_code=500, detail="RAPTOR not initialized")
     
