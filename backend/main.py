@@ -171,16 +171,6 @@ async def generate_lyrics(request: GenerateRequest):
         logger.error(f"Full error details: {repr(e)}")
         raise HTTPException(status_code=500, detail=f"Generation error: {str(e)}")
 
-@app.get("/status")
-async def get_status():
-    """Check model loading status"""
-    return {
-        "models_loaded": models_loaded,
-        "model_loading_error": model_loading_error,
-        "server_running": True,
-        "timestamp": time.time()
-    }
-
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run(app, host="0.0.0.0", port=port)
