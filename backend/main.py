@@ -1,16 +1,17 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
-import os
-from rag_pipeline import SongRAPTOR
-from core.models import GenerateRequest, GenerateResponse
-from google import genai
-from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
-from dotenv import load_dotenv
+import os
+import uvicorn
+import threading
+import time
+from google import genai
+import logging
+from core.models import GenerateRequest, GenerateResponse
 
-load_dotenv()
-GOOGLE_API_KEY = os.getenv("GEMINI_API")
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = FastAPI(title="SongRAPTOR API", description="AI-powered song lyrics generation")
 
@@ -22,7 +23,59 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Serve frontend files
+# Global variables
+raptor = None
+models_loaded = False
+model_loading_error = None
+
+# Import SongRAPTOR
+def initialize_raptor():
+    global raptor, models_loaded, model_loading_error
+    try:
+        from rag_pipeline import SongRAPTOR
+        logger.info("Starting model loading in background...")
+        raptor = SongRAPTOR()
+        models_loaded = True
+        logger.info("All models loaded successfully!")
+    except Exception as e:
+        model_loading_error = str(e)
+        logger.error(f"Model loading failed: {e}")
+        models_loaded = False
+
+@app.on_event("startup")
+async def startup_event():
+    # Bind to port immediately, then load models in background
+    port = os.environ.get("PORT", 8000)
+    logger.info(f"FastAPI server starting on port {port}")
+    
+    # Start model loading in background thread
+    thread = threading.Thread(target=initialize_raptor)
+    thread.daemon = True
+    thread.start()
+
+# Health check endpoint
+@app.get("/health")
+async def health_check():
+    if not models_loaded and model_loading_error:
+        return {
+            "status": "degraded", 
+            "message": "Server running but models still loading",
+            "models_loaded": models_loaded,
+            "error": model_loading_error
+        }
+    elif models_loaded:
+        return {
+            "status": "healthy",
+            "message": "Server running with all models loaded",
+            "models_loaded": models_loaded
+        }
+    else:
+        return {
+            "status": "loading",
+            "message": "Server running, models are still loading",
+            "models_loaded": models_loaded
+        }
+
 @app.get("/")
 async def read_root():
     return FileResponse('frontend/index.html')
@@ -34,28 +87,30 @@ async def serve_static(path: str):
         return FileResponse(static_path)
     return FileResponse('frontend/index.html')
 
-raptor = None
-
-@app.on_event("startup")
-async def startup_event():
-    global raptor
-    try:
-        # Initialize RAPTOR without building index (uses existing ChromaDB)
-        raptor = SongRAPTOR()
-        print("SongRAPTOR initialized with existing ChromaDB database")
-
-    except Exception as e:
-        print(f"Error during startup: {e}")
-        raptor = SongRAPTOR()
-
 @app.post("/generate", response_model=GenerateResponse)
 async def generate_lyrics(request: GenerateRequest):
+    # Check if models are loaded
+    if not models_loaded:
+        if model_loading_error:
+            raise HTTPException(
+                status_code=503, 
+                detail=f"Models failed to load: {model_loading_error}. Please check the server logs."
+            )
+        else:
+            raise HTTPException(
+                status_code=503, 
+                detail="Models are still loading. Please try again in 30-60 seconds."
+            )
+    
     if not raptor:
         raise HTTPException(status_code=500, detail="RAPTOR not initialized")
     
     try:
+        logger.info(f"Generating lyrics for query: {request.query}")
+        
         # Search for relevant examples
         results = raptor.search(request.query, request.top_k)
+        logger.info(f"Found {len(results)} relevant examples")
         
         # Format context
         def format_rag_context(results):
@@ -98,12 +153,13 @@ async def generate_lyrics(request: GenerateRequest):
         prompt = build_generation_prompt(request.query, formatted_context)
         
         # Generate lyrics using Gemini
-        client = genai.Client(api_key=GOOGLE_API_KEY)
+        client = genai.Client(api_key='AIzaSyCWCn6ulx-vRDyHDThaHMxUQfdOWN2GNM0')
         response = client.models.generate_content(
             model="gemini-2.5-flash",
             contents=prompt
         )
 
+        logger.info("Successfully generated lyrics")
         return GenerateResponse(
             lyrics=response.text,
             context=formatted_context,
@@ -111,13 +167,19 @@ async def generate_lyrics(request: GenerateRequest):
         )
     
     except Exception as e:
+        logger.error(f"Generation error: {e}")
         raise HTTPException(status_code=500, detail=f"Generation error: {str(e)}")
 
-# Serve frontend in production
-if os.path.exists("../frontend"):
-    app.mount("/", StaticFiles(directory="../frontend", html=True), name="frontend")
+@app.get("/status")
+async def get_status():
+    """Check model loading status"""
+    return {
+        "models_loaded": models_loaded,
+        "model_loading_error": model_loading_error,
+        "server_running": True,
+        "timestamp": time.time()
+    }
 
 if __name__ == "__main__":
-    import uvicorn
-    port = int(os.environ.get("PORT", 10000))
+    port = int(os.environ.get("PORT", 8000))
     uvicorn.run(app, host="0.0.0.0", port=port)
