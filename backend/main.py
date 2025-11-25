@@ -156,7 +156,7 @@ async def generate_lyrics(request: GenerateRequest):
         prompt = build_generation_prompt(request.query, formatted_context)
         
         # Generate lyrics using Gemini
-        client = genai.Client(api_key='AIzaSyCWCn6ulx-vRDyHDThaHMxUQfdOWN2GNM0')
+        client = genai.Client(api_key=GOOGLE_KEY)
         response = client.models.generate_content(
             model="gemini-2.5-flash",
             contents=prompt
