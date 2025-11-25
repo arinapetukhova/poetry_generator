@@ -168,6 +168,7 @@ async def generate_lyrics(request: GenerateRequest):
     
     except Exception as e:
         logger.error(f"Generation error: {e}")
+        logger.error(f"Full error details: {repr(e)}")
         raise HTTPException(status_code=500, detail=f"Generation error: {str(e)}")
 
 @app.get("/status")

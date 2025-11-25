@@ -2,7 +2,6 @@ from dataclasses import dataclass
 
 @dataclass
 class RAPTORConfig:
-    embedding_model: str = "all-MiniLM-L6-v2"
     chroma_persist_path: str = "./chroma_db"
     collection_name: str = "song_raptor"
     distance_function: str = "cosine"
