@@ -1,0 +1,135 @@
+============================================================
+RAPTOR RAG SYSTEM BENCHMARK REPORT
+Level & Similarity Analysis
+============================================================
+
+SUMMARY
+----------------------------------------
+Total Tests: 15
+Passed: 13
+Failed: 2
+Success Rate: 86.7%
+Average Search Time: 0.080s
+Average Similarity Score: 0.570
+
+PERFORMANCE METRICS
+----------------------------------------
+min_search_time: 0.078s
+max_search_time: 0.085s
+median_search_time: 0.079s
+level_accuracy_genre: 20.0%
+level_accuracy_artist: 16.0%
+level_accuracy_song: 84.0%
+pass_rate_genre: 80.0%
+pass_rate_artist: 80.0%
+pass_rate_song: 100.0%
+overall_pass_rate: 86.7%
+overall_avg_similarity: 0.570
+
+QUERY COVERAGE
+----------------------------------------
+GENRE queries: 5
+ARTIST queries: 5
+SONG queries: 5
+
+DETAILED TEST RESULTS
+--------------------------------------------------
+Running test: song in genre rock
+  FAIL - Time: 0.250s, Results: 5
+  Similarity: 0.565-0.595 (avg: 0.579)
+  Level Distribution: {'song': 5}
+  Expected Level: genre
+
+Running test: song in genre pop
+  PASS - Time: 0.085s, Results: 5
+  Similarity: 0.547-0.614 (avg: 0.564)
+  Level Distribution: {'genre': 1, 'song': 3, 'artist': 1}
+  Expected Level: genre
+
+Running test: song in genre soul
+  PASS - Time: 0.079s, Results: 5
+  Similarity: 0.536-0.624 (avg: 0.579)
+  Level Distribution: {'song': 4, 'genre': 1}
+  Expected Level: genre
+
+Running test: song in genre alternative
+  PASS - Time: 0.079s, Results: 5
+  Similarity: 0.492-0.612 (avg: 0.527)
+  Level Distribution: {'genre': 2, 'song': 3}
+  Expected Level: genre
+
+Running test: song in genre rap
+  PASS - Time: 0.081s, Results: 5
+  Similarity: 0.601-0.648 (avg: 0.616)
+  Level Distribution: {'genre': 1, 'song': 4}
+  Expected Level: genre
+
+Running test: song in style of band The Beatles
+  PASS - Time: 0.080s, Results: 5
+  Similarity: 0.558-0.593 (avg: 0.574)
+  Level Distribution: {'artist': 1, 'song': 4}
+  Expected Level: artist
+
+Running test: song in style of musician Michael Jackson
+  PASS - Time: 0.082s, Results: 5
+  Similarity: 0.639-0.656 (avg: 0.647)
+  Level Distribution: {'artist': 1, 'song': 4}
+  Expected Level: artist
+
+Running test: song in style of musician Bob Dylan
+  FAIL - Time: 0.090s, Results: 5
+  Similarity: 0.557-0.575 (avg: 0.564)
+  Level Distribution: {'song': 5}
+  Expected Level: artist
+
+Running test: song in style of musician Taylor Swift
+  PASS - Time: 0.079s, Results: 5
+  Similarity: 0.601-0.725 (avg: 0.645)
+  Level Distribution: {'artist': 1, 'song': 4}
+  Expected Level: artist
+
+Running test: song in style of band Radiohead
+  PASS - Time: 0.078s, Results: 5
+  Similarity: 0.533-0.624 (avg: 0.564)
+  Level Distribution: {'artist': 1, 'song': 4}
+  Expected Level: artist
+
+Running test: love songs with romantic lyrics
+  PASS - Time: 0.079s, Results: 5
+  Similarity: 0.599-0.621 (avg: 0.611)
+  Level Distribution: {'song': 4, 'genre': 1}
+  Expected Level: song
+
+Running test: sad breakup heartbreak lyrics
+  PASS - Time: 0.078s, Results: 5
+  Similarity: 0.555-0.608 (avg: 0.571)
+  Level Distribution: {'song': 5}
+  Expected Level: song
+
+Running test: summer fun beach party lyrics
+  PASS - Time: 0.079s, Results: 5
+  Similarity: 0.484-0.549 (avg: 0.518)
+  Level Distribution: {'song': 5}
+  Expected Level: song
+
+Running test: inspirational motivational lyrics
+  PASS - Time: 0.080s, Results: 5
+  Similarity: 0.505-0.533 (avg: 0.517)
+  Level Distribution: {'genre': 1, 'song': 4}
+  Expected Level: song
+
+Running test: storytelling narrative ballad
+  PASS - Time: 0.081s, Results: 5
+  Similarity: 0.443-0.503 (avg: 0.478)
+  Level Distribution: {'song': 3, 'genre': 2}
+  Expected Level: song
+
+
+COMPREHENSIVE BENCHMARK RESULTS
+----------------------------------------
+
+LEVEL-WISE SIMILARITY ANALYSIS:
+  GENRE: 0.573 (from 5 queries)
+  ARTIST: 0.599 (from 5 queries)
+  SONG: 0.539 (from 5 queries)
+  OVERALL: 0.570 (from 15 queries)
