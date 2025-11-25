@@ -124,17 +124,13 @@ async def generate_lyrics(request: GenerateRequest):
         )
 
         response_text = response.text
-        # response_text = re.sub(r'\*\*(.*?)\*\*', r'\1', response_text)
-        # response_text = re.sub(r'\*(.*?)\*', r'\1', response_text)
-        # response_text = re.sub(r'__(.*?)__', r'\1', response_text)
-        # response_text = re.sub(r'_(.*?)_', r'\1', response_text)
-        # response_text.strip()
 
         reasoning = ""
         lyrics = ""
         if "Reasoning:" in response_text and "Generated Lyrics:" in response_text:
             parts = response_text.split("Generated Lyrics:", 1)
             reasoning = parts[0].replace("Reasoning:", "").strip()
+            lyrics = parts[0].replace("Generated Lyrics:", "").strip()
         else:
             lyrics = response_text
 
